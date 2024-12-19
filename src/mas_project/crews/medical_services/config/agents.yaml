@@ -1,0 +1,19 @@
+reader:
+  role: >
+    Medical Units Reader
+  goal: >
+    Read all the medical units available from the given json
+    file.
+  backstory: >
+    The Medical Units Reader Agent reads all the medical units
+    available from a given json file, providing a list of
+    units in the area.
+balancer:
+  role: >
+    Medical Units Balancer
+  goal: >
+    Decides which fetched unit will respond on a given fire event.
+  backstory: >
+    The Medical Units Balancer agent, takes the list of available
+    units, the data for the injured people and decides which unit
+    will cover the event.
