@@ -4,7 +4,13 @@ version = "0.1.0"
 description = "mas_project using crewAI"
 authors = [{ name = "Theofanis Petkos", email = "thepetk@gmail.com" }]
 requires-python = ">=3.10,<=3.13"
-dependencies = ["crewai[tools]>=0.79.4,<1.0.0"]
+dependencies = [
+    "crewai[tools]>=0.86.0,<1.0.0",
+    "osmnx>=2.0.1",
+    "scikit-learn>=1.6.0",
+    "pydantic>=2.4.2,<3.0.0",
+    "uv",
+]
 
 [project.scripts]
 kickoff = "mas_project.main:kickoff"
