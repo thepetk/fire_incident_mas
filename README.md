@@ -1,33 +1,32 @@
-# Fire Response Incident Flow
+# Fire Incident Multi Agent System
 
-Welcome to the fire response incident flow project, powered by [crewAI](https://crewai.com). This project aims to assist the people involved during a fire crisis at the city of San Cristobal de la Laguna, Canary Islands, Spain.
+Welcome to the fire response incident flow project, powered by [crewAI](https://crewai.com). This project aims to provide an implementation of a multi-agent fire incident response system for the city of [San Cristobal de la Laguna, Canary Islands, Spain](https://es.wikipedia.org/wiki/San_Crist%C3%B3bal_de_La_Laguna).
 
 ## Installation
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
-
-First, if you haven't already, install uv:
+Ensure you have Python >=3.10 <=3.13 installed on your system. This project is mostly based on [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) for dependency management and package handling. To further information on how to install conda please look [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). After conda is installed, you can proceed to create & activate an environment where all the dependencies will be installed:
 
 ```bash
-pip install uv
+conda create --name <env-name>
+conda activate <env-name>
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+The next step is to install the [OSMnx](https://osmnx.readthedocs.io/en/stable/index.html) dependency:
 
 ```bash
-crewai install
+conda install osmnx
+```
+
+Finally, you have to install the rest of the dependencies:
+
+```bash
+pip install .
 ```
 
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+To kickstart the flow presented in `main.py` you can run from the root folder:
 
 ```bash
-crewai run
+crewai flow kickoff
 ```
-
-## Limitations
-
-The current project is not yet completed, only the basic structure of the project has been added. Therefore, the project at this moment is not able to predict any response.

@@ -1,0 +1,12 @@
+# virtual environments
+.venv/
+venv/
+mas/
+
+# cache dirs
+cache/
+__pycache__/
+
+# databases
+db/
+
