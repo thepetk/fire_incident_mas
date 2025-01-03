@@ -1,3 +1,4 @@
+from typing import List
 from pydantic import BaseModel, Field
 
 
@@ -11,3 +12,9 @@ class FirefighterUnitSchema(BaseModel):
         ..., description="The type of the unit (truck, rescue, ladder etc.)"
     )
     personnel_capacity: int = Field(..., description="Capacity of firefighters.")
+
+
+class FirefighterUnitListSchema(BaseModel):
+    """Output for firefighter unit list data"""
+
+    items: List[FirefighterUnitSchema]

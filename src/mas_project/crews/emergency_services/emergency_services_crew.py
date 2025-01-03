@@ -2,7 +2,6 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from .schemas import FireEventSchema
 from mas_project.tools import MdxAnalyzerTool
-from mas_project.llm import localLLM
 
 
 @CrewBase
@@ -17,14 +16,12 @@ class EmergencyServicesCrew:
         return Agent(
             config=self.agents_config["reader"],
             tools=[MdxAnalyzerTool()],
-            llm=localLLM,
         )
 
     @agent
     def editor(self) -> Agent:
         return Agent(
             config=self.agents_config["editor"],
-            llm=localLLM,
         )
 
     @task

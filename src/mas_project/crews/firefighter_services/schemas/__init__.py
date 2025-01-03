@@ -1,1 +1,1 @@
-from .firefighter_unit_schema import FirefighterUnitSchema
+from .firefighter_unit_schema import FirefighterUnitSchema, FirefighterUnitListSchema

@@ -26,7 +26,7 @@ class FireEventState(BaseModel):
     fire_severity: "str" = None
     assigned_medical_unit_id: "int" = None
     assigned_firefighter_unit_id: "int" = None
-    status: str = "initialized"
+    status: "str" = "initialized"
 
 
 class FireEventFlow(Flow[FireEventState]):
@@ -80,12 +80,13 @@ class FireEventFlow(Flow[FireEventState]):
         _r = (
             FirefighterServicesCrew()
             .crew()
-            .kickoff(inputs={
-                    "json_file": 'firetrucks.json',
-                    "location_x": 28.461720670375886,
-                    "location_y": -16.2835862728014,
-                    "fire_type": "ordinary",
-                    "fire_severity": "high",
+            .kickoff(
+                inputs={
+                    "json_file": FIRE_REPORT_PATH,
+                    "location_x": self.state.location_x,
+                    "location_y": self.state.location_y,
+                    "fire_type": self.state.fire_type,
+                    "fire_severity": self.state.fire_severity,
                 }
             )
         )
