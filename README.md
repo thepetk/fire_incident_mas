@@ -30,3 +30,67 @@ To kickstart the flow presented in `main.py` you can run from the root folder:
 ```bash
 crewai flow kickoff
 ```
+
+## Necessary Resources
+
+To make the project fully functionable you need to provide three files:
+
+- A `.graphml` file with the information of the city of la laguna. The file can be extracted using the `osmnx` package.
+
+- An `.mdx` file with the content of the fire report. Your fire report should have the following format:
+
+```
+---other content---
+
+<x coordinate>, <y coordinate>   (X, Y Coordinates)
+
+---other content---
+
+* **Fire Type:** <type>
+* **Number of Injured People:** <number of injured people>
+* **Fire Severity:** <severity>
+
+---other content---
+```
+
+- An `.json` file with all the available firefighter units. The json file should have the format:
+
+```json
+{
+  "fire_trucks": [
+    {
+      "uid": 1,
+      "X_coordinate": 1.11,
+      "Y_coordinate": -2.22,
+      "unit_type": "truck",
+      "personel_capacity": 4
+    }
+  ]
+}
+```
+
+- An `.json` file with all the available hospital units. The json file should have the format:
+
+```json
+{
+  "hospitals": [
+    {
+      "uid": 1,
+      "X_coordinate": 12.48,
+      "Y_coordinate": -14.68,
+      "available_beds": 1
+    }
+  ]
+}
+```
+
+## Environment Variables
+
+Don't forget to export the environment variables with the paths of the files described above:
+
+```bash
+export FIRE_UNITS_JSON_FILE="your-file-path"
+export MEDICAL_UNITS_JSON_FILE="your-file-path"
+export CITY_FILE="your-file-path"
+export MDX_FILE = "your-file-path"
+```
