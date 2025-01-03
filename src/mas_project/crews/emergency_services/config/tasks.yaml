@@ -11,9 +11,7 @@ summarize_fire_event:
   description: >
     Take the fire event from the reader and break it down to specific
     data including coordinates x and y, fire type, number of
-    injured people and fire severity. Ask human if the generated
-    plan is ok before finalizing it.
+    injured people and fire severity.
+    Ask human if the generated plan is ok before finalizing it.
   expected_output: "..."
-  #   A report that specifies which firefighter units and which
-  #   medical units, if any, will respond to the given fire event.
   agent: editor
