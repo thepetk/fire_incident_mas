@@ -1,6 +1,6 @@
 reader:
   role: >
-    EFirefighter Units Reader
+    Firefighter Units Reader
   goal: >
     Read all the firefighter units available from the given
     json file.
@@ -8,9 +8,9 @@ reader:
     The Firefighter Units Reader Agent reads all the firefighter
     units available from a given json file, providing a list of
     units in the area.
-dispatch:
+dispatcher:
   role: >
-    Firefighter Units Dispatch
+    Firefighter Units Dispatcher
   goal: >
     Decide which fetched firefighter unit will respond on a given
     fire event.

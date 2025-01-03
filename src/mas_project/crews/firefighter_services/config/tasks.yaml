@@ -1,19 +1,28 @@
 read_firefighter_units:
   description: >
     Read a list of firefighter units from the json file {json_file}.
-  expected_output: >
-    A list of firefighter units with id, x and y coordinates, unit
-    type and personnel capacity.
+  expected_output: "..."
   agent: reader
+exclude_firefighter_unit:
+  description: >
+    Fires with high severity can only be handled by trucks.
+    Fires with gas type can only be handled by trucks.
+    Fires with simple type or low severity can be handled by cars. 
+    Take the list from the firefighter units reader response and check
+    which units can respond to the given fire event with fire type {fire_type}
+    and severity set to {fire_severity}.
+    Exclude from the list those who cannot respond to the fire event.
+  expected_output: "..."
+  agent: dispatcher
 dispatch_firefighter_unit:
   description: >
-    Exclude the units that are unable to respond to this fire event
-    with type {fire_type}, severity {fire_severity} and location x,y
-    ({location_x}, {location_y}).
-    Generate the path to the fire for each one of the units remaining
-    in the list.
-    Decide which firefighter unit will handle the fire
-    event, according to the shortest distance. 
-  expected_output: >
-    The unit that will cover the incident.
+    Take the updated list without the excluded firefighter units.
+    For every unit available in the updated list calculate its distance 
+    to the fire event using the RouteDistanceTool.
+    You should pass to the tool as x_origin, y_origin the coordinates of the
+    firefighter unit and as x_destination, y_destination the coordinates of the
+    fire event (x={location_x}, y={location_y}).
+    Return the uid of the unit that has the smaller distance to the fire event
+    and can respond to this fire type and severity.
+  expected_output: "..."
   agent: dispatcher

@@ -1,18 +1,27 @@
 read_medical_units:
   description: >
     Read a list of medical units from the json file {json_file}.
-  expected_output: >
-    A list of medical units with id, x and y coordinates and the
-    available beds.
+  expected_output: "..."
   agent: reader
+exclude_medical_unit:
+  description: >
+    Take the list from the reader result.
+    Compare the available beds for each given unit to the number of
+    injured people {injured_people}.
+    Exclude the units with not enough available beds for this fire
+    event from the list.
+  expected_output: "..."
+  agent: balancer
 assign_medical_unit:
   description: >
-    Exclude the units with not enough available beds for this fire
-    event with {injured_people} injured people.
-    Generate the path to the location x,y ({location_x}, {location_y})
-    of the fire for each one of the units remaining in the list.
-    Decide which unit will cover the fire event, according to the
-    shortest distance. 
-  expected_output: >
-    The unit that will cover the incident.
+    Take the updated list with the medical units able to respond to 
+    this fire event.
+    For each one of the medical units in the list calculate the distance
+    between the hospital and the fire event using the RouteDistanceTool.
+    You should pass in the tool as x_origin, y_origin the coordinates of
+    the fire and as x_destination, y_destination the coordinates of the fire
+    event (x={location_x}, y={location_y}).
+    Return the medical unit from the updated list that has the smaller
+    distance to the fire event.
+  expected_output: "..."
   agent: balancer

@@ -1,19 +1,19 @@
 injest_fire_event:
   description: >
-    Provide a fire event from the report file {mdx_file}.
+    Provide a fire event summary from the report file {mdx_file}.
   expected_output: >
-    One fire report that includes all the details for the
+    A summary of the fire report that includes all the details for the
     fire event along with the fire type, the x,y coordinates
     of the fire location, the number of injured people and
     the fire severity.
   agent: reader
 summarize_fire_event:
   description: >
-    Take the fetched fire event and break it down to specific
+    Take the fire event from the reader and break it down to specific
     data including coordinates x and y, fire type, number of
     injured people and fire severity. Ask human if the generated
     plan is ok before finalizing it.
-  expected_output: >
-    A report that specifies which firefighter units and which
-    medical units, if any, will respond to the given fire event.
+  expected_output: "..."
+  #   A report that specifies which firefighter units and which
+  #   medical units, if any, will respond to the given fire event.
   agent: editor
