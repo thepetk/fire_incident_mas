@@ -5,8 +5,12 @@ from pydantic import BaseModel, Field
 class FireEventSchema(BaseModel):
     """Output for Summarize Fire Report task."""
 
-    location_x: int = Field(..., description="Coordinate x of the fire event location.")
-    location_y: int = Field(..., description="Coordinate y of the fire event location.")
+    location_x: float = Field(
+        ..., description="Coordinate x of the fire event location."
+    )
+    location_y: float = Field(
+        ..., description="Coordinate y of the fire event location."
+    )
     fire_type: str = Field(
         ..., description="The type of the fire (ordinary, electrical, gas, etc.)"
     )
