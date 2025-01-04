@@ -74,6 +74,7 @@ class FireEventFlow(Flow[FireEventState]):
                 }
             )
         )
+
         return _r.raw["uid"]
 
     def _dispatch_firefighter_units(self) -> "int":
@@ -90,6 +91,7 @@ class FireEventFlow(Flow[FireEventState]):
                 }
             )
         )
+
         return _r.raw["uid"]
 
     @listen("Has Injured People")

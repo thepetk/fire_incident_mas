@@ -42,7 +42,7 @@ class MdxAnalyzerTool(BaseTool):
     def _analyze_mdx(
         self,
         lines: List[str],
-    ) -> List[str, str]:
+    ) -> Dict[str, str]:
         analysis: Dict[str, str] = {}
         for line in lines:
             for key in MAPPINGS.keys():
