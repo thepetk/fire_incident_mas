@@ -13,7 +13,7 @@ MEDICAL_UNITS_JSON_FILE = os.getenv("MEDICAL_UNITS_JSON_FILE", "hospitals.json")
 
 class JSONReaderTool(BaseTool):
     name: str = "JSONReaderTool"
-    description: str = "A tool that reads a json file with fire truck units"
+    description: str = "A tool that reads a json file with fire truck or hospital units"
     args_schema: Type[BaseModel] = JSONReaderSchema
     json_file_path: Optional[str] = None
     json_file_type: Optional[str] = None
