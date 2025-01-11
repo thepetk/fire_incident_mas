@@ -18,6 +18,7 @@ class MedicalServicesCrew:
         return Agent(
             config=self.agents_config["reader"],
             tools=[JSONReaderTool(json_file_type="hospitals")],
+            max_iter=3,
         )
 
     @agent

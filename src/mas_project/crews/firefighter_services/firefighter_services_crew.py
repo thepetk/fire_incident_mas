@@ -18,7 +18,7 @@ class FirefighterServicesCrew:
         return Agent(
             config=self.agents_config["reader"],
             tools=[JSONReaderTool()],
-            verbose=True,
+            max_iter=3,
         )
 
     @agent
@@ -26,7 +26,6 @@ class FirefighterServicesCrew:
         return Agent(
             config=self.agents_config["dispatcher"],
             tools=[RouteDistanceTool()],
-            verbose=True,
         )
 
     @task
