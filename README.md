@@ -92,5 +92,5 @@ Don't forget to export the environment variables with the paths of the files des
 export FIRE_UNITS_JSON_FILE="your-file-path"
 export MEDICAL_UNITS_JSON_FILE="your-file-path"
 export CITY_FILE="your-file-path"
-export MDX_FILE = "your-file-path"
+export FIRE_REPORT_PATH = "your-file-path"
 ```
