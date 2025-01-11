@@ -5,7 +5,7 @@ from crewai_tools import BaseTool
 from pydantic import BaseModel
 from .schemas import MdxAnalyzerSchema
 
-MDX_FILE = os.getenv("MDX_FILE", "emergency_02.mdx")
+MDX_FILE = os.getenv("FIRE_REPORT_PATH", "emergency_02.mdx")
 MAPPINGS = {
     "fire_type": "* **Fire Type:**",
     "number_of_injured_people": "* **Number of Injured People:**",
